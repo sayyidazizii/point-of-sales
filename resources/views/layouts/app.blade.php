@@ -69,6 +69,11 @@
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/fullcalendar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
+
+  <!-- Tambahkan CSS DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+
   @stack('rtl')
   @stack('dashboard')
   <script>
@@ -85,6 +90,25 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+
+  <!-- Tambahkan JS jQuery, Bootstrap, dan DataTables dengan tema Bootstrap 5 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "paging": true,     // Enable pagination
+            "searching": true,  // Enable searching
+            "ordering": true,   // Enable ordering
+            "info": true,       // Show info
+            "autoWidth": false  // Disable auto width for better control
+        });
+    });
+  </script>
 </body>
 
 </html>
