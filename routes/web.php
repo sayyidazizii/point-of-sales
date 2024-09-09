@@ -9,7 +9,9 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\InvtItemController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\InvtItemUnitController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\InvtItemCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,15 +32,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('dashboard');
 	})->name('dashboard');
 
-	Route::get('/item',[InvtItemController::class, 'index'])->name('item');
-	Route::get('/item/add-item', [InvtItemController::class, 'addItem'])->name('add-item');
-	Route::get('/item/add-reset', [InvtItemController::class, 'addResetItem'])->name('add-reset-item');
-	Route::post('/item/add-item-elements', [InvtItemController::class, 'addItemElements'])->name('add-item-elements');
-	Route::post('/item/process-add-item', [InvtItemController::class,'processAddItem'])->name('process-add-item');
-	Route::get('/item/edit-item/{item_id}', [InvtItemController::class, 'editItem'])->name('edit-item');
-	Route::post('/item/process-edit-item', [InvtItemController::class, 'processEditItem'])->name('process-edit-item');
-	Route::get('/item/delete-item/{item_id}', [InvtItemController::class, 'deleteItem'])->name('delete-item');
-
 	Route::get('/item-unit',[InvtItemUnitController::class, 'index'])->name('item-unit');
 	Route::post('/item-unit/get-item-unit',[InvtItemUnitController::class, 'getItemUnit'])->name('get-item-unit');
 	Route::get('/item-unit/add',[InvtItemUnitController::class, 'addInvtItemUnit'])->name('add-item-unit');
@@ -49,6 +42,15 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/item-unit/process-edit-item-unit', [InvtItemUnitController::class, 'processEditInvtItemUnit'])->name('process-edit-item-unit');
 	Route::get('/item-unit/delete/{item_unit_id}', [InvtItemUnitController::class, 'deleteInvtItemUnit'])->name('delete-item-unit');
 
+	Route::get('/item',[InvtItemController::class, 'index'])->name('item');
+	Route::get('/item/add-item', [InvtItemController::class, 'addItem'])->name('add-item');
+	Route::get('/item/add-reset', [InvtItemController::class, 'addResetItem'])->name('add-reset-item');
+	Route::post('/item/add-item-elements', [InvtItemController::class, 'addItemElements'])->name('add-item-elements');
+	Route::post('/item/process-add-item', [InvtItemController::class,'processAddItem'])->name('process-add-item');
+	Route::get('/item/edit-item/{item_id}', [InvtItemController::class, 'editItem'])->name('edit-item');
+	Route::post('/item/process-edit-item', [InvtItemController::class, 'processEditItem'])->name('process-edit-item');
+	Route::get('/item/delete-item/{item_id}', [InvtItemController::class, 'deleteItem'])->name('delete-item');
+	
 	Route::get('/item-category',[InvtItemCategoryController::class, 'index'])->name('item-category');
 	Route::get('/item-category/add',[InvtItemCategoryController::class, 'addItemCategory'])->name('add-item-category');
 	Route::post('/item-category/elements-add',[InvtItemCategoryController::class, 'elementsAddItemCategory'])->name('elements-add-category');

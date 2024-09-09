@@ -13,9 +13,9 @@
                 <div class="card-header pb-1">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">Barang</h5>
+                            <h5 class="mb-0">Kategori</h5>
                         </div>
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Barang baru</a>
+                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Kategori Baru</a>
                     </div>
                 </div>
                 <div class="card-body  pb-2">
@@ -24,9 +24,8 @@
                             <thead>
                                 <tr>
                                     <th width="2%" style='text-align:center'>No</th>
-                                    <th width="20%" style='text-align:center'>Kategori Barang</th>
-                                    <th width="20%" style='text-align:center'>Kode Barang</th>
-                                    <th width="20%" style='text-align:center'>Nama Barang</th>
+                                    <th width="10%" style='text-align:center'>Kode Kategori Barang</th>
+                                    <th width="20%" style='text-align:center'>Nama Kategori Barang</th>
                                     <th width="10%" style='text-align:center'>Aksi</th>
                                 </tr>
                             </thead>
@@ -35,12 +34,11 @@
                                 @foreach($data as $row)
                                 <tr>
                                     <td style='text-align:center'>{{ $no++ }}</td>
-                                    <td>{{ $row->category->item_category_name }}</td>
-                                    <td>{{ $row['item_code'] }}</td>
-                                    <td>{{ $row['item_name'] }}</td>
-                                    <td class="text-center">
-                                        <a type="button" class="btn btn-white-shadow" href="{{ url('/item/edit-item/'.$row['item_id']) }}"> <i class="fas fa-edit text-warning"></i></a>
-                                        <a type="button" class="btn btn-white-shadow" href="{{ url('/item/delete-item/'.$row['item_id']) }}"> <i class="cursor-pointer fas fa-trash text-danger"></i></a>
+                                    <td>{{ $row['item_category_code'] }}</td>
+                                    <td>{{ $row['item_category_name'] }}</td>
+                                    <td class="">
+                                        <a type="button" class="btn btn-outline-warning btn-sm" href="{{ url('/item-category/edit-category/'.$row['item_category_id']) }}">Edit</a>
+                                        <a type="button" class="btn btn-outline-danger btn-sm" href="{{ url('/item-category/delete-category/'.$row['item_category_id']) }}">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach
