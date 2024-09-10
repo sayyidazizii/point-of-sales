@@ -36,9 +36,9 @@
                                     <td style='text-align:center'>{{ $no++ }}</td>
                                     <td>{{ $row['item_unit_code'] }}</td>
                                     <td>{{ $row['item_unit_name'] }}</td>
-                                    <td class="">
-                                        <a type="button" class="btn btn-outline-warning btn-sm" href="{{ url('/item-unit/edit/'.$row['item_unit_id']) }}">Edit</a>
-                                        <a type="button" class="btn btn-outline-danger btn-sm" href="{{ url('/item-unit/delete/'.$row['item_unit_id']) }}">Hapus</a>
+                                    <td class="text-center">
+                                        <a type="button" class="btn btn-white-shadow" href="{{ url('/item-unit/edit/'.$row['item_unit_id']) }}"> <i class="fas fa-edit text-warning"></i></a>
+                                        <a type="button" class="btn btn-white-shadow" href="{{ url('/item-unit/delete/'.$row['item_unit_id']) }}"> <i class="cursor-pointer fas fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
